@@ -4,34 +4,32 @@ const menuBtnIcon = menuBtn.querySelector("i");
 
 // Toggle Navigation Menu on Mobile
 menuBtn.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
-        navMobile.classList.toggle("open");
+  if (window.innerWidth <= 768) {
+    navMobile.classList.toggle("open");
 
-        const isOpen = navMobile.classList.contains("open");
-        menuBtnIcon.className = isOpen ? "ri-close-line" : "ri-menu-3-line";
+    const isOpen = navMobile.classList.contains("open");
+    menuBtnIcon.className = isOpen ? "ri-close-line" : "ri-menu-3-line";
 
-        // Ensure menu visibility on mobile
-        navMobile.style.display = isOpen ? "flex" : "none";
-    }
+    // Ensure menu visibility on mobile
+    navMobile.style.display = isOpen ? "flex" : "none";
+  }
 });
 
 // Close Menu When Clicking a Link on Mobile
 navMobile.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
-        navMobile.classList.remove("open");
-        navMobile.style.display = "none";
-        menuBtnIcon.className = "ri-menu-3-line";
-    }
+  if (window.innerWidth <= 768) {
+    navMobile.classList.remove("open");
+    navMobile.style.display = "none";
+    menuBtnIcon.className = "ri-menu-3-line";
+  }
 });
 
 // Ensure menu is always visible on larger screens
 window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-        navMobile.style.display = "none"; // Hide mobile menu
-    }
+  if (window.innerWidth > 768) {
+    navMobile.style.display = "none"; // Hide mobile menu
+  }
 });
-
-
 
 // header container
 ScrollReveal().reveal(".header__content h1", {

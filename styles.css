@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #28A745; 
+  --primary-color: #28a745;
 
---secondary-color: #17A2B8;
+  --secondary-color: #17a2b8;
 
---extra-light: #D4EDDA; 
+  --extra-light: #d4edda;
 
---white: #FFFFFF;
+  --white: #ffffff;
 
---gradient-1: linear-gradient(to bottom right, #004D40, #00796B);
+  --gradient-1: linear-gradient(to bottom right, #004d40, #00796b);
 
---gradient-2: linear-gradient(to bottom, #28A745, #17A2B8);
---gradient-hover: linear-gradient(to bottom, #34D058, #20C2E3);
+  --gradient-2: linear-gradient(to bottom, #28a745, #17a2b8);
+  --gradient-hover: linear-gradient(to bottom, #34d058, #20c2e3);
 
   --max-width: 1200px;
 }
@@ -117,8 +117,6 @@ nav {
   text-decoration: none;
 }
 
-
-
 /* Desktop Navigation Links */
 .nav__links {
   list-style: none;
@@ -127,8 +125,6 @@ nav {
   gap: 5rem;
   padding: 0;
 }
-
-
 
 .nav__bar {
   display: flex;
@@ -161,12 +157,9 @@ nav {
   background: var(--gradient-2);
 }
 
-
-
 .btn__large {
   margin-left: auto; /* Moves the button to the end */
 }
-
 
 .nav__links li {
   list-style: none;
@@ -232,29 +225,21 @@ nav {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav__menu__btn {
-      display: block;
+    display: block;
   }
 
   .nav__links {
-      display: none; /* Hide desktop nav */
+    display: none; /* Hide desktop nav */
   }
 
   .btn__large {
-      display: none; /* Hide Contact button in navbar */
+    display: none; /* Hide Contact button in navbar */
   }
 
   .nav__mobile {
-      display: none;
+    display: none;
   }
 }
-
-
-
-
-
-
-
-
 
 .header__container {
   padding-top: 8rem;
@@ -297,6 +282,13 @@ nav {
   right: 1rem;
   top: 50%;
   transform: translate(50%, -50%) rotate(90deg);
+}
+#about,
+#home,
+#skills,
+#portfolio {
+  scroll-margin-top: 80px; /* Ensures sections are fully visible below navbar */
+  padding-top: 100px; /* Extra space to prevent content from hiding under navbar */
 }
 
 .about__container {
@@ -360,7 +352,6 @@ nav {
 .visit-website a:hover {
   background-image: var(--gradient-hover);
 }
-
 
 .service__grid {
   margin-top: 2rem;
