@@ -88,115 +88,173 @@ body {
   background-image: var(--gradient-1);
 }
 
+/* Navbar Styles */
 nav {
   position: fixed;
-  isolation: isolate;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  max-width: var(--max-width);
-  margin: auto;
-  z-index: 9;
+  background-image: var(--gradient-1);
+  z-index: 1000;
+  padding: 15px 0;
 }
 
 .nav__bar {
-  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  /* background-image: var(--gradient-1); */
+  padding: 1rem;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+/* Logo (C) */
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+
+/* Desktop Navigation Links */
+.nav__links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 0;
+}
+
+
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes items apart */
+  padding: 1rem;
+  width: 100%;
 }
 
 .nav__logo {
-  padding: 9px 12px;
-  font-size: 1.2rem;
-}
-
-.nav__bar a {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--white);
-}
-
-.nav__menu__btn {
   font-size: 1.5rem;
-  color: var(--white);
-  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: auto; /* Pushes it to the start */
 }
 
-.nav__links {
+.btn__large {
+  background: var(--gradient-1);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-left: auto; /* Pushes it to the end */
+}
+
+.btn__large:hover {
+  background: var(--gradient-2);
+}
+
+
+
+.btn__large {
+  margin-left: auto; /* Moves the button to the end */
+}
+
+
+.nav__links li {
   list-style: none;
-  position: absolute;
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  background-image: var(--gradient-2);
-  transform: translateY(-100%);
-  transition: 0.5s;
-  z-index: -1;
-}
-
-.nav__links.open {
-  transform: translateY(0);
 }
 
 .nav__links a {
   color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
   transition: 0.3s;
 }
 
 .nav__links a:hover {
-  color: var(--white);
+  color: #ddd;
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-image: var(--gradient-1);  
-  z-index: 1000; /* Keeps it above other content */
-  padding: 15px 0; 
+/* Contact Button */
+.btn__large {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
 }
+
+.btn__large:hover {
+  background-color: #ff3333;
+}
+
+/* Mobile Menu Button */
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile Menu (Hidden by Default) */
+.nav__mobile {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-image: var(--gradient-2);
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 999;
+}
+
+.nav__mobile.open {
+  display: flex;
+}
+
+.nav__mobile li {
+  margin: 10px 0;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  /* Show Menu Button */
   .nav__menu__btn {
       display: block;
   }
 
-  /* Hide Nav Links Initially */
   .nav__links {
-      display: none;
-      flex-direction: column;
-      background: #222;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
+      display: none; /* Hide desktop nav */
   }
 
-  .nav__links li {
-      margin: 10px 0;
-  }
-
-  /* Show Links when Active */
-  .nav__links.active {
-      display: flex;
-  }
-
-  /* Show Large Contact Button */
   .btn__large {
-      display: inline-block;
+      display: none; /* Hide Contact button in navbar */
+  }
+
+  .nav__mobile {
+      display: none;
   }
 }
 
-.btn__large {
-  display: none;
-}
+
+
+
+
+
+
+
 
 .header__container {
   padding-top: 8rem;
